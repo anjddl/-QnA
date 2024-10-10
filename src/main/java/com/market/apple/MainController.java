@@ -11,6 +11,6 @@ public class MainController {
     }
     @GetMapping("/")
     public String root() {
-        return "redirect:/qna/list";
+        return "";
     }
 }

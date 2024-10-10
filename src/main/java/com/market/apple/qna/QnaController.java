@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class QnaController {
-    @GetMapping("/qna/list")
+    @GetMapping("/")
     @ResponseBody
-    public String list() {
+    public String hi() {
         return "hi";
     }
 }
