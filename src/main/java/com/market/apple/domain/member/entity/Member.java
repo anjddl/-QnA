@@ -1,9 +1,6 @@
 package com.market.apple.domain.member.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +10,13 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //
+    @Column(unique = true)
+    private String username;
+
+    private String password;
+
+    @Column(unique = true)
+    private String email;
 
     private LocalDateTime createDate;
 
