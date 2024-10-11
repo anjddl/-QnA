@@ -7,4 +7,6 @@ import jakarta.persistence.Id;
 public class Member {
     @Id
     Long id;
+
+
 }
