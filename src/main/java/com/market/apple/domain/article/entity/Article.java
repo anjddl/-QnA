@@ -24,7 +24,4 @@ public class Article {
 
     private LocalDateTime modifiedDate;
 
-    @Column()
-
-
 }
