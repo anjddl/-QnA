@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ArticleController {
     @GetMapping("/article/list")
-    @ResponseBody
     public String list() {
-        return "게시글 목록";
+        return "article/list";
     }
 }
 
