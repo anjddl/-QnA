@@ -4,7 +4,7 @@ package com.market.apple.domain.article.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-package com.market.apple.domain.article.controller;
+
 
 @Controller
 public class ArticleController {
