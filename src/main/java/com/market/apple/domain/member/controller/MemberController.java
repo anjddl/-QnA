@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MemberController {
-    @GetMapping("/member")
-    @ResponseBody
-    public String member() {
-        return "member";
+    @GetMapping("/member/login")
+    public String login() {
+        return "member/login";
+    }
+    @GetMapping("/member/join")
+    public String join() {
+        return "member/join";
     }
 }
