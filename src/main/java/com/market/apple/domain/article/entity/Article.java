@@ -1,14 +1,13 @@
 package com.market.apple.domain.article.entity;
 
 import com.market.apple.domain.member.entity.Member;
+import com.market.apple.global.jpa.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 
@@ -18,16 +17,12 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Article {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
-
+public class Article extends BaseEntity {
     @ManyToOne
     private Member member;
 
     @Column(columnDefinition = "TINYINT(1)")
-    private boolean is_notice;
+    private boolean isNotice;
 
     @Column(length = 100)
     private String title;
@@ -37,9 +32,5 @@ public class Article {
 
     @Column
     private int count;
-
-    private LocalDateTime createDate;
-
-    private LocalDateTime modifiedDate;
 
 }

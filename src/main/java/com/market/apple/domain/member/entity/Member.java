@@ -1,14 +1,21 @@
 package com.market.apple.domain.member.entity;
 
-import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
+import com.market.apple.global.jpa.BaseEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Entity
-public class Member {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Member extends BaseEntity {
 
     @Column(unique = true)
     private String username;
@@ -17,8 +24,4 @@ public class Member {
 
     @Column(unique = true)
     private String email;
-
-    private LocalDateTime createDate;
-
-    private LocalDateTime modifiedDate;
 }

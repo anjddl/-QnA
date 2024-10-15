@@ -1,16 +1,22 @@
 package com.market.apple.domain.quiz.entity;
 
 import com.market.apple.domain.member.entity.Member;
-import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
+import com.market.apple.global.jpa.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Entity
-public class Answer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Answer extends BaseEntity {
     @ManyToOne
     private Member member;
 
@@ -20,7 +26,4 @@ public class Answer {
     @ManyToOne
     private Choice choice;
 
-    private LocalDateTime createDate;
-
-    private LocalDateTime modifiedDate;
 }
