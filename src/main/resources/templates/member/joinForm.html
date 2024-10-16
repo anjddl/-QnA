@@ -1,0 +1,37 @@
+<html layout:decorate="~{layout}">
+  <div layout:fragment="content">
+    <form action="/member/join" method="POST">
+      <fieldset>
+        <label>
+          아이디
+          <input
+                  name="아이디"
+                  placeholder="아이디를 입력하세요."
+                  autocomplete="given-name"
+          />
+          패스워드
+          <input
+                  name="패스워드"
+                  type="password"
+                  placeholder="아이디를 입력하세요."
+                  autocomplete="given-name"
+          />
+        </label>
+        <label>
+          이메일
+          <input
+                  type="email"
+                  name="email"
+                  placeholder="이메일을 입력해주세요."
+                  autocomplete="email"
+          />
+        </label>
+      </fieldset>
+
+      <input
+              type="submit"
+              value="가입"
+      />
+    </form>
+  </div>
+</html>

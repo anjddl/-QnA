@@ -25,8 +25,8 @@ public class Dev {
             articleService.create("제목3",  "내용3", false, member1);
             articleService.create("제목4",  "내용4", false, member2);
             articleService.create("제목5",  "내용5", false, member2);
-            
-            // 퀴즈 등록
+
+//             퀴즈 등록
 
         };
     }
