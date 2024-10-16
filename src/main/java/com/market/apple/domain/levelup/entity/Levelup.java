@@ -1,4 +1,4 @@
-package com.market.apple.domain.levelUp.entity;
+package com.market.apple.domain.levelup.entity;
 
 import com.market.apple.domain.member.entity.Member;
 import com.market.apple.global.jpa.BaseEntity;
@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LevelUp extends BaseEntity  {
+public class Levelup extends BaseEntity  {
     @ManyToOne
     private Member member;
 
