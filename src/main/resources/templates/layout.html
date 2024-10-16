@@ -24,9 +24,10 @@
                 <ul>
                     <li><a href="/article/list" class="contrast">QnA</a></li>
                     <li><a href="/quiz/list" class="contrast">퀴즈</a></li>
-                    <li><a href="/levelup/list" class="contrast">등업</a></li>
-                    <li><a href="/member/login" class="contrast">로그인</a></li>
-                    <li><a href="/member/join" class="contrast">회원가입</a></li>
+                    <li><a href="/levelup/list"class="contrast">등업</a></li>
+                    <li><a href="/member/login"  sec:authorize="isAnonymous()" class="contrast">로그인</a></li>
+                    <li><a href="/member/login"  sec:authorize="isAuthenticated()" class="contrast">로그아웃</a></li>
+                    <li><a href="/member/join" sec:authorize="isAnonymous()" class="contrast">회원가입</a></li>
                 </ul>
             </nav>
         </header>
