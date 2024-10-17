@@ -17,9 +17,7 @@ public class ArticleController {
     @GetMapping("/article/list")
     public String list(Model model) {
         List<Article> articleList = this.articleService.getList();
-
         model.addAttribute("articleList", articleList);
-
         return "article/list";
     }
 }
