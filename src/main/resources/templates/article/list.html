@@ -11,40 +11,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">번호1</th>
-            <td>제목1</td>
-            <td>작성자</td>
-            <td>생성일</td>
-            <td>조회수</td>
-        </tr>
-        <tr>
-            <th scope="row">번호2</th>
-            <td>제목2</td>
-            <td>작성자</td>
-            <td>생성일</td>
-            <td>조회수</td>
-        </tr>
-        <tr>
-            <th scope="row">번호3</th>
-            <td>제목3</td>
-            <td>작성자</td>
-            <td>생성일</td>
-            <td>조회수</td>
-        </tr>
-        <tr>
-            <th scope="row">번호4</th>
-            <td>제목4</td>
-            <td>작성자</td>
-            <td>생성일</td>
-            <td>조회수</td>
-        </tr>
-        <tr>
-            <th scope="row">번호5</th>
-            <td>제목5</td>
-            <td>작성자</td>
-            <td>생성일</td>
-            <td>조회수</td>
+        <tr th:each="article, stat : ${articleList}">
+            <td th:text="${stat.index + 1}"></td> <!-- Row number -->
+            <td th:text="${article.title}">제목 없음</td> <!-- Article subject -->
+            <td th:text="${article.member.username}">작성자 없음</td> <!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
+            <td th:text="${#temporals.format(article.createdDate, 'yyyy-MM-dd')}">날짜 없음</td> <!-- Creation date -->
+            <td th:text="${article.count}">0</td> <!-- View count -->
         </tr>
         </tbody>
         <tfoot>

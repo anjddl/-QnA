@@ -6,11 +6,12 @@ import com.market.apple.domain.quiz.repository.QuizRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class QuizService {
     private final QuizRepository quizRepository;
-
     public Quiz create(String title, String content, Member member, boolean isNotice) {
         Quiz quiz = new Quiz();
         quiz.setTitle(title);
@@ -18,8 +19,10 @@ public class QuizService {
         quiz.setMember(member);
         quiz.setNotice(isNotice);
         quiz.setCount(0);
-
         return this.quizRepository.save(quiz);
     }
 
+    public List<Quiz> getLIst () {
+        return this.quizRepository.findAll();
+    }
 }

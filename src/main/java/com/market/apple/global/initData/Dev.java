@@ -29,6 +29,7 @@ public class Dev {
 //             퀴즈 등록
 
         };
+
     }
 
 }

@@ -11,40 +11,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">번호1</th>
-      <td>제목1</td>
-      <td>작성자</td>
-      <td>생성일</td>
-      <td>조회수</td>
-    </tr>
-    <tr>
-      <th scope="row">번호2</th>
-      <td>제목2</td>
-      <td>작성자</td>
-      <td>생성일</td>
-      <td>조회수</td>
-    </tr>
-    <tr>
-      <th scope="row">번호3</th>
-      <td>제목3</td>
-      <td>작성자</td>
-      <td>생성일</td>
-      <td>조회수</td>
-    </tr>
-    <tr>
-      <th scope="row">번호4</th>
-      <td>제목4</td>
-      <td>작성자</td>
-      <td>생성일</td>
-      <td>조회수</td>
-    </tr>
-    <tr>
-      <th scope="row">번호5</th>
-      <td>제목5</td>
-      <td>작성자</td>
-      <td>생성일</td>
-      <td>조회수</td>
+    <tr th:each="quiz, stat : ${quizList}">
+      <td th:text="${stat.index + 1}"></td>
+      <td th:text="${quiz.title}">제목 없음</td>
+      <td th:text="${quiz.member.username}">작성자 없음</td>
+      <td th:text="${#temporals.format(quiz.createdDate, 'yyyy-MM-dd')}">날짜 없음</td>
+      <td th:text="${quiz.count}">0</td>
     </tr>
     </tbody>
     <tfoot>
