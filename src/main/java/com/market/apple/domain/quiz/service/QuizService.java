@@ -12,17 +12,18 @@ import java.util.List;
 @Service
 public class QuizService {
     private final QuizRepository quizRepository;
-    public Quiz create(String title, String content, Member member, boolean isNotice) {
+
+    // 인스턴스 메서드로 변경
+    public Quiz create(String title, String content, boolean isNotice, Member member) {
         Quiz quiz = new Quiz();
         quiz.setTitle(title);
         quiz.setContent(content);
         quiz.setMember(member);
-        quiz.setNotice(isNotice);
-        quiz.setCount(0);
+
         return this.quizRepository.save(quiz);
     }
 
-    public List<Quiz> getLIst () {
+    public List<Quiz> getList() {
         return this.quizRepository.findAll();
     }
 }

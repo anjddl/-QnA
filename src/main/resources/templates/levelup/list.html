@@ -13,10 +13,9 @@
     <tbody>
     <tr th:each="levelup, stat : ${levelupList}">
       <td th:text="${stat.index + 1}"></td> <!-- Row number -->
-      <td th:text="${levelup.title}">제목 없음</td> <!-- Article subject -->
-      <td th:text="${levelup.member.username}">작성자 없음</td> <!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
-      <td th:text="${#temporals.format(levelup.createdDate, 'yyyy-MM-dd')}">날짜 없음</td> <!-- Creation date -->
-      <td th:text="${levelup.count}">0</td> <!-- View count -->
+      <td th:text="${levelup.title}"></td> <!-- Article subject -->
+      <td th:text="${levelup.member.username}"></td> <!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
+      <td th:text="${#temporals.format(levelup.createdDate, 'yyyy-MM-dd')}"></td> <!-- Creation date -->
     </tr>
     </tbody>
     <tfoot>

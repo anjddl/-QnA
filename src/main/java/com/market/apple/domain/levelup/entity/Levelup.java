@@ -28,6 +28,8 @@ public class Levelup extends BaseEntity  {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+
+
     public enum Status {
         W, Y, N
     }

@@ -13,10 +13,10 @@
     <tbody>
     <tr th:each="quiz, stat : ${quizList}">
       <td th:text="${stat.index + 1}"></td>
-      <td th:text="${quiz.title}">제목 없음</td>
-      <td th:text="${quiz.member.username}">작성자 없음</td>
-      <td th:text="${#temporals.format(quiz.createdDate, 'yyyy-MM-dd')}">날짜 없음</td>
-      <td th:text="${quiz.count}">0</td>
+      <td th:text="${quiz.title}"></td>
+      <td th:text="${quiz.member.username}"></td>
+      <td th:text="${#temporals.format(quiz.createdDate, 'yyyy-MM-dd')}"></td>
+      <td>0</td>
     </tr>
     </tbody>
     <tfoot>
