@@ -14,7 +14,7 @@
         <tr th:each="article, stat : ${articleList}">
             <td th:text="${stat.index + 1}"></td> <!-- Row number -->
             <td th:text="${article.title}">제목 없음</td> <!-- Article subject -->
-            <td th:text="${article.member.username}">작성자 없음</td> <!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
+            <td th:text="${article.member.username}">작성자 없음</td><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
             <td th:text="${#temporals.format(article.createdDate, 'yyyy-MM-dd')}">날짜 없음</td> <!-- Creation date -->
             <td th:text="${article.count}">0</td> <!-- View count -->
         </tr>

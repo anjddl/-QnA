@@ -19,4 +19,6 @@ public class LevelupController {
         model.addAttribute("levelupList", levelupList);
         return "levelup/list";
     }
+
+
 }

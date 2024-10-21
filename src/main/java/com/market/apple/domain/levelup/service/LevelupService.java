@@ -4,6 +4,7 @@ package com.market.apple.domain.levelup.service;
 import com.market.apple.domain.levelup.entity.Levelup;
 import com.market.apple.domain.levelup.repository.LevelupRepository;
 import com.market.apple.domain.member.entity.Member;
+import jakarta.transaction.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
