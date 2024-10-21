@@ -27,7 +27,7 @@ public class ArticleController {
     public String getArticle (Model model, @PathVariable("id") Long id) {
         Article article = this.articleService.getArticle(id);
         model.addAttribute("article", article);
-        return "article_detail";
+        return "article/detail";
     }
 }
 
