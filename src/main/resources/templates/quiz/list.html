@@ -14,7 +14,7 @@
     <tr th:each="quiz, stat : ${quizList}">
       <td th:text="${stat.index + 1}"></td>
       <td><a th:href="@{|/quiz/detail/${quiz.id}|}" th:text="${quiz.title}">제목 없음</a></td> <!-- Article subject -->
-      <td><a th:href="@{|/quiz/detail/${quiz.id}|}" th:text="${quiz.member.username}">작성자 없음</a></td>
+      <td th:text="${quiz.member.username}">작성자 없음</td>
       <td th:text="${#temporals.format(quiz.createdDate, 'yyyy-MM-dd')}"></td>
       <td>0</td>
     </tr>
