@@ -9,12 +9,16 @@
                             <tr>
                                 <th scope="col">번호</th>
                                 <th scope="col">제목</th>
+                                <th scope="col">글쓴이</th>
+                                <th scope="col">날짜</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="article : ${articleList}">
-                                <td>[[${article.title}]]</td>
-                                <td>[[${article.content}]]</td>
+                            <tr th:each="article, stat : ${articleList}">
+                                <td th:text="${stat.index + 1}"></td>
+                                <td><a th:href="@{|/article/detail/${article.id}|}" th:text="${article.title}"></a></td>
+                                <td th:text="${article.member.username}"></td><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') --><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
+                                <td th:text="${#temporals.format(article.createdDate, 'yyyy-MM-dd')}"></td><!-- Article subject -->
                             </tr>
                         </tbody>
                     </table>
@@ -28,16 +32,16 @@
                         <tr>
                             <th scope="col">번호</th>
                             <th scope="col">제목</th>
+                            <th scope="col">글쓴이</th>
+                            <th scope="col">날짜</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>데이터</td>
-                            <td>데이터</td>
-                        </tr>
-                        <tr>
-                            <td>데이터</td>
-                            <td>데이터</td>
+                        <tr th:each="quiz, stat : ${quizList}">
+                            <td th:text="${stat.index + 1}"></td>
+                            <td><a th:href="@{|/quiz/detail/${quiz.id}|}" th:text="${quiz.title}"></a></td>
+                            <td th:text="${quiz.member.username}"></td><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') --><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
+                            <td th:text="${#temporals.format(quiz.createdDate, 'yyyy-MM-dd')}"></td>
                         </tr>
                         </tbody>
                     </table>
@@ -53,23 +57,16 @@
                         <tr>
                             <th scope="col">번호</th>
                             <th scope="col">제목</th>
-                            <th scope="col">내용</th>
+                            <th scope="col">글쓴이</th>
                             <th scope="col">날짜</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>데이터</td>
-                            <td>데이터</td>
-                            <td>데이터</td>
-                            <td>데이터</td>
-                        </tr>
-                        <tr>
-                            <td>데이터</td>
-                            <td>데이터</td>
-                            <td>데이터</td>
-                            <td>데이터</td>
-                        </tr>
+                        <tr th:each="levelup, stat : ${levelupList}">
+                            <td th:text="${stat.index + 1}"></td> <!-- Row number -->
+                            <td><a th:href="@{|/levelup/detail/${levelup.id}|}" th:text="${levelup.title}"></a></td>
+                            <td th:text="${levelup.member.username}"></td>
+                            <td th:text="${#temporals.format(levelup.createdDate, 'yyyy-MM-dd')}"></td>
                         </tbody>
                     </table>
                 </article>

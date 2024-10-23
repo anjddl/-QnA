@@ -3,16 +3,22 @@ package com.market.apple.domain.article.service;
 import com.market.apple.domain.article.entity.Article;
 import com.market.apple.domain.article.repository.ArticleRepository;
 import com.market.apple.domain.member.entity.Member;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
 public class ArticleService {
+    @Autowired
     private final ArticleRepository articleRepository;
+
     public Article create(String title, String content, boolean isNotice, Member member) {
         Article article = new Article();
         article.setTitle(title);
@@ -23,15 +29,33 @@ public class ArticleService {
         return articleRepository.save(article);
     }
 
-    public List<Article> getList () {
+    public List<Article> getList() {
         return this.articleRepository.findAll();
     }
 
     public Article getArticle(Long id) {
-        Optional<Article> oq =  this.articleRepository.findById(id);
+        Optional<Article> oq = this.articleRepository.findById(id);
         if (oq.isEmpty()) {
             return null;
         }
         return oq.get();
     }
+
+    public void create(String title, String content) {
+        Article a = new Article();
+        a.setTitle(title);
+        a.setContent(content);
+        this.articleRepository.save(a);
+    }
+
+    @Transactional
+    public void updateArticle(Article article) {
+        Article existingArticle = articleRepository.findById(article.getId()).orElseThrow();
+        existingArticle.setTitle(article.getTitle());
+        existingArticle.setContent(article.getContent());
+        articleRepository.save(existingArticle);
+    }
+
+
+
 }

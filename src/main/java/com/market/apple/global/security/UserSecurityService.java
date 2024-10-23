@@ -4,6 +4,7 @@ import com.market.apple.domain.member.entity.Member;
 import com.market.apple.domain.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -28,6 +29,8 @@ public class UserSecurityService implements UserDetailsService {
         }
         Member siteUser = _member.get();
         List<GrantedAuthority> authorities = new ArrayList<>();
+
+
 
         return new User(siteUser.getUsername(), siteUser.getPassword(), authorities);
     }

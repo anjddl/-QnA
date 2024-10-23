@@ -1,5 +1,12 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content">
-    레벨업 상세
+      <textarea name="read-only"
+                style="height: 55px;"
+      >[[${levelup.title}]]
+      </textarea>
+    <textarea name="read-only"
+              style="height: 450px;"
+    >[[${levelup.content}]]
+      </textarea>
 </div>
 </html>

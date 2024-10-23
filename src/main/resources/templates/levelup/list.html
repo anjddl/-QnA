@@ -13,14 +13,15 @@
     <tbody>
     <tr th:each="levelup, stat : ${levelupList}">
       <td th:text="${stat.index + 1}"></td> <!-- Row number -->
-      <td th:text="${levelup.title}">제목 없음</td> <!-- Article subject -->
-      <td th:text="${levelup.member.username}">작성자 없음</td> <!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
+      <td><a th:href="@{|/levelup/detail/${levelup.id}|}" th:text="${levelup.title}">제목 없음</a></td> <!-- Article subject -->
+      <td><a th:href="@{|/levelup/detail/${levelup.id}|}" th:text="${levelup.member.username}">작성자 없음</a></td> <!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
       <td th:text="${#temporals.format(levelup.createdDate, 'yyyy-MM-dd')}">날짜 없음</td>
-      <td th:text="${article.count}">0</td>
+      <td>0</td>
     </tr>
     </tbody>
     <tfoot>
     </tfoot>
   </table>
+  <a th:href="@{/levelup/create}" class="btn btn-primary"><button>글쓰기</button></a>
 </div>
 </html>

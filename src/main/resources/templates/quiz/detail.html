@@ -1,5 +1,12 @@
 <html layout:decorate="~{layout}">
-  <div layout:fragment="content">
-    퀴즈 상세
-  </div>
+<div layout:fragment="content">
+      <textarea name="read-only"
+                style="height: 55px;"
+      >[[${quiz.title}]]
+      </textarea>
+  <textarea name="read-only"
+            style="height: 450px;"
+  >[[${quiz.content}]]
+      </textarea>
+</div>
 </html>

@@ -14,13 +14,14 @@
         <tr th:each="article, stat : ${articleList}">
             <td th:text="${stat.index + 1}"></td> <!-- Row number -->
             <td><a th:href="@{|/article/detail/${article.id}|}" th:text="${article.title}">제목 없음</a></td> <!-- Article subject -->
-            <td th:text="${article.member.username}">작성자 없음</td><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
+            <td><a th:href="@{|/article/detail/${article.id}|}" th:text="${article.member.username}">작성자 없음</a></td><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
             <td th:text="${#temporals.format(article.createdDate, 'yyyy-MM-dd')}">날짜 없음</td> <!-- Creation date -->
-            <td th:text="${article.count}">0</td> <!-- View count -->
+            <td th:text="${article.count}"></td> <!-- View count -->
         </tr>
         </tbody>
         <tfoot>
         </tfoot>
     </table>
+    <a th:href="@{/article/create}" class="btn btn-primary"><button>글쓰기</button></a>
 </div>
 </html>

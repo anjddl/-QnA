@@ -1,5 +1,6 @@
 package com.market.apple.domain.quiz.service;
 
+import com.market.apple.domain.article.entity.Article;
 import com.market.apple.domain.member.entity.Member;
 import com.market.apple.domain.quiz.entity.Quiz;
 import com.market.apple.domain.quiz.repository.QuizRepository;
@@ -7,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -25,5 +27,20 @@ public class QuizService {
 
     public List<Quiz> getList() {
         return this.quizRepository.findAll();
+    }
+
+    public Quiz getQuiz(Long id) {
+        Optional<Quiz> oq = this.quizRepository.findById(id);
+        if (oq.isEmpty()) {
+            return null;
+        }
+        return oq.get();
+    }
+
+    public void create(String title, String content) {
+        Quiz q = new Quiz();
+        q.setTitle(title);
+        q.setContent(content);
+        this.quizRepository.save(q);
     }
 }

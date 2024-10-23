@@ -1,6 +1,12 @@
 <html layout:decorate="~{layout}">
   <div layout:fragment="content">
-    <h1>[[${article.title}]]</h1>
-    <div>[[${article.content}]]</div>
+      <textarea name="read-only"
+        style="height: 55px;"
+        >[[${article.title}]]
+      </textarea>
+      <textarea name="read-only"
+        style="height: 450px;"
+      >[[${article.content}]]
+      </textarea>
   </div>
 </html>
