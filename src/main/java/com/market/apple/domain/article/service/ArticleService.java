@@ -41,13 +41,6 @@ public class ArticleService {
         return oq.get();
     }
 
-    public void create(String title, String content) {
-        Article a = new Article();
-        a.setTitle(title);
-        a.setContent(content);
-        this.articleRepository.save(a);
-    }
-
     @Transactional
     public void updateArticle(Article article) {
         Article existingArticle = articleRepository.findById(article.getId()).orElseThrow();
@@ -55,7 +48,11 @@ public class ArticleService {
         existingArticle.setContent(article.getContent());
         articleRepository.save(existingArticle);
     }
-
+    public void modify(Article article, String title, String content) {
+        article.setTitle(title);
+        article.setContent(content);
+        this.articleRepository.save(article);
+    }
 
 
 }

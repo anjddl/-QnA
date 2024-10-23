@@ -37,10 +37,5 @@ public class QuizService {
         return oq.get();
     }
 
-    public void create(String title, String content) {
-        Quiz q = new Quiz();
-        q.setTitle(title);
-        q.setContent(content);
-        this.quizRepository.save(q);
-    }
+
 }

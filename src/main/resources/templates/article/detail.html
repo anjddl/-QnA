@@ -1,12 +1,8 @@
 <html layout:decorate="~{layout}">
   <div layout:fragment="content">
-      <textarea name="read-only"
-        style="height: 55px;"
-        >[[${article.title}]]
-      </textarea>
-      <textarea name="read-only"
-        style="height: 450px;"
-      >[[${article.content}]]
-      </textarea>
+    <h1>[[${article.title}]]</h1>
+    <p>[[${article.content}]]</p>
+      <a th:href="@{|/article/modify/${article.id}|}" type="button">수정</a>
+      <a th:href="@{/}" type="button">삭제</a>
   </div>
 </html>
