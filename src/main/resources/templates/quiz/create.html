@@ -1,0 +1,13 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content">
+  <form th:action="@{/quiz/create}" method="post">
+    <input type="text" name="title">
+    <textarea
+            name="content"
+            style="height: 450px;"
+    >
+    </textarea>
+    <button type="submit">저장하기</button>
+  </form>
+</div>
+</html>
