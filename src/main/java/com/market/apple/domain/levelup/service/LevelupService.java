@@ -48,4 +48,8 @@ public class LevelupService {
         levelup.setContent(content);
         this.levelupRepository.save(levelup);
     }
+
+    public void delete(Long id) {
+        this.levelupRepository.deleteById(id);
+    }
 }

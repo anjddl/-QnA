@@ -1,12 +1,10 @@
 <html layout:decorate="~{layout}">
-<div layout:fragment="content">
-      <textarea name="read-only"
-                style="height: 55px;"
-      >[[${quiz.title}]]
-      </textarea>
-  <textarea name="read-only"
-            style="height: 450px;"
-  >[[${quiz.content}]]
-      </textarea>
-</div>
+    <div layout:fragment="content">
+    <article>
+      <header>[[${quiz.title}]]</header>
+        [[${quiz.content}]]
+    </article>
+        <a th:href="@{|/quiz/modify/${quiz.id}|}" type="button">수정</a>
+        <a th:href="@{|/quiz/delete/${id}|}" type="button">삭제</a>
+    </div>
 </html>

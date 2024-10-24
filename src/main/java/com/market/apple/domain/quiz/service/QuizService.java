@@ -1,6 +1,7 @@
 package com.market.apple.domain.quiz.service;
 
 import com.market.apple.domain.article.entity.Article;
+import com.market.apple.domain.levelup.entity.Levelup;
 import com.market.apple.domain.member.entity.Member;
 import com.market.apple.domain.quiz.entity.Quiz;
 import com.market.apple.domain.quiz.repository.QuizRepository;
@@ -36,6 +37,12 @@ public class QuizService {
         }
         return oq.get();
     }
-
-
+    public void modify(Quiz quiz, String title, String content) {
+        quiz.setTitle(title);
+        quiz.setContent(content);
+        this.quizRepository.save(quiz);
+    }
+    public void delete(Long id) {
+        this.quizRepository.deleteById(id);
+    }
 }

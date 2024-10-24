@@ -1,8 +1,10 @@
 <html layout:decorate="~{layout}">
     <div layout:fragment="content">
-    <h1>[[${levelup.title}]]</h1>
-    <p>[[${levelup.content}]]</p>
-        <a th:href="@{|/levelup/modify/${levelup.id}|}" type="button">수정</a>
-        <a th:href="@{/}" type="button">삭제</a>
+        <article>
+            <header>[[${levelup.title}]]</header>
+                [[${levelup.content}]]
+        </article>
+            <a th:href="@{|/levelup/modify/${levelup.id}|}" type="button">수정</a>
+            <a th:href="@{|/levelup/delete/${id}|}" type="button">삭제</a>
     </div>
 </html>

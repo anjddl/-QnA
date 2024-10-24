@@ -66,7 +66,7 @@ public class LevelupController {
         levelupForm.setTitle(levelup.getTitle());
         levelupForm.setContent(levelup.getContent());
 
-        return "article/modifyForm";
+        return "levelup/modifyForm";
     }
 
     @PreAuthorize("isAuthenticated()")
@@ -80,7 +80,19 @@ public class LevelupController {
         if (!levelup.getMember().getUsername().equals(principal.getName())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정권한이 없습니다.");
         }
-        this.levelupService.modify(levelup, levelup.getTitle(), levelupForm.getContent());
+        this.levelupService.modify(levelup, levelupForm.getTitle(), levelupForm.getContent());
         return String.format("redirect:/levelup/detail/%s", id);
+    }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping("/levelup/delete/{id}")
+    public String delete(@PathVariable("id") Long id, Principal principal) {
+        Levelup levelup = this.levelupService.getLevelup(id);
+        if (!levelup.getMember().getUsername().equals(principal.getName())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "삭제권한이 없습니다.");
+        }
+
+        this.levelupService.delete(id);
+        return "redirect:/levelup/list";
     }
 }

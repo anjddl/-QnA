@@ -1,17 +1,17 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container">
-  <h5 class="my-3 border-bottom pb-2">등업신청</h5>
-  <form th:action="@{|/levelup/modify/${id}|}" th:object="${levelupForm}" method="post">
+  <h5 class="my-3 border-bottom pb-2">퀴즈작성</h5>
+  <form th:action="@{|/quiz/modify/${id}|}" th:object="${quizForm}" method="post">
     <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
       <div th:each="err : ${#fields.allErrors()}" th:text="${err}"></div>
     </div>
     <div class="mb-3">
       <label for="title" class="form-label">제목</label>
-      <input type="text" name="title" id="title" class="form-control" th:value="${levelupForm.title}">
+      <input type="text" name="title" id="title" class="form-control" th:value="${quizForm.title}">
     </div>
     <div class="mb-3">
       <label for="content" class="form-label">내용</label>
-      <textarea name="content" id="content" class="form-control" rows="10" th:text="${levelupForm.content}"></textarea>
+      <textarea name="content" id="content" class="form-control" rows="10" th:text="${quizForm.content}"></textarea>
     </div>
     <input type="submit" value="수정하기" class="btn btn-primary my-2">
   </form>
