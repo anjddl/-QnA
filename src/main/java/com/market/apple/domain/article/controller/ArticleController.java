@@ -1,8 +1,8 @@
 package com.market.apple.domain.article.controller;
 
 
-import com.market.apple.domain.article.form.ArticleForm;
 import com.market.apple.domain.article.entity.Article;
+import com.market.apple.domain.article.form.ArticleForm;
 import com.market.apple.domain.article.service.ArticleService;
 import com.market.apple.domain.member.entity.Member;
 import com.market.apple.domain.member.service.MemberService;
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.server.ResponseStatusException;
+
 import java.security.Principal;
 import java.util.List;
 
