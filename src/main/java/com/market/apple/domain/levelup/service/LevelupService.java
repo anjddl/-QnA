@@ -43,4 +43,9 @@ public class LevelupService {
         l.setContent(content);
         this.levelupRepository.save(l);
     }
+    public void modify(Levelup levelup, String title, String content) {
+        levelup.setTitle(title);
+        levelup.setContent(content);
+        this.levelupRepository.save(levelup);
+    }
 }

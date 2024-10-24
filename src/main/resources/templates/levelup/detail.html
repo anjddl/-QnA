@@ -1,12 +1,8 @@
 <html layout:decorate="~{layout}">
-<div layout:fragment="content">
-      <textarea name="read-only"
-                style="height: 55px;"
-      >[[${levelup.title}]]
-      </textarea>
-    <textarea name="read-only"
-              style="height: 450px;"
-    >[[${levelup.content}]]
-      </textarea>
-</div>
+    <div layout:fragment="content">
+    <h1>[[${levelup.title}]]</h1>
+    <p>[[${levelup.content}]]</p>
+        <a th:href="@{|/levelup/modify/${levelup.id}|}" type="button">수정</a>
+        <a th:href="@{/}" type="button">삭제</a>
+    </div>
 </html>
