@@ -1,8 +1,11 @@
 <html layout:decorate="~{layout}">
   <div layout:fragment="content">
-    <h1>[[${article.title}]]</h1>
-    <p>[[${article.content}]]</p>
+
+    <article>
+      <header>[[${article.title}]]</header>
+        [[${article.content}]]
+    </article>
       <a th:href="@{|/article/modify/${article.id}|}" type="button">수정</a>
-      <a th:href="@{/}" type="button">삭제</a>
+      <a th:href="@{|/article/delete/${id}|}" type="button">삭제</a>
   </div>
 </html>
