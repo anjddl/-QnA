@@ -62,7 +62,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="levelup, stat : ${levelupList}"th:if="${stat.index} < 2">
+                        <tr th:each="levelup, stat : ${levelupList}"th:if="${stat.index} < 3">
                             <td th:text="${stat.index + 1}"></td> <!-- Row number -->
                             <td><a th:href="@{|/levelup/detail/${levelup.id}|}" th:text="${levelup.title}"></a></td>
                             <td th:text="${levelup.member.username}"></td>
