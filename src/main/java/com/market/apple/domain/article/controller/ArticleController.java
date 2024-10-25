@@ -38,6 +38,9 @@ public class ArticleController {
     @GetMapping("article/detail/{id}")
     public String getArticle(Model model, @PathVariable("id") Long id) {
         Article article = this.articleService.getArticle(id);
+        article.setCount(article.getCount() + 1);
+        this.articleService.updateArticle(article);
+
         model.addAttribute("article", article);
         return "article/detail";
     }

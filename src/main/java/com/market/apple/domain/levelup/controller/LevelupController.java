@@ -1,7 +1,5 @@
 package com.market.apple.domain.levelup.controller;
 
-import com.market.apple.domain.article.entity.Article;
-import com.market.apple.domain.article.form.ArticleForm;
 import com.market.apple.domain.levelup.entity.Levelup;
 import com.market.apple.domain.levelup.form.LevelupForm;
 import com.market.apple.domain.levelup.service.LevelupService;
@@ -38,6 +36,9 @@ public class LevelupController {
     @GetMapping("levelup/detail/{id}")
     public String getLevelup(Model model, @PathVariable("id") Long id) {
         Levelup levelup = this.levelupService.getLevelup(id);
+        levelup.setCount(levelup.getCount() + 1);
+        this.levelupService.modify(levelup, levelup.getTitle(), levelup.getContent());
+
         model.addAttribute("levelup", levelup);
         return "levelup/detail";
     }

@@ -28,6 +28,9 @@ public class Quiz extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Type type;
 
+    @Column
+    private int count;
+
     public enum Type {
         OXQ, MCQ
     }

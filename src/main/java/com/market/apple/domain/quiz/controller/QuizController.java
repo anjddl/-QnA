@@ -1,9 +1,5 @@
 package com.market.apple.domain.quiz.controller;
 
-import com.market.apple.domain.article.entity.Article;
-import com.market.apple.domain.article.form.ArticleForm;
-import com.market.apple.domain.levelup.entity.Levelup;
-import com.market.apple.domain.levelup.form.LevelupForm;
 import com.market.apple.domain.member.entity.Member;
 import com.market.apple.domain.member.service.MemberService;
 import com.market.apple.domain.quiz.entity.Quiz;
@@ -40,6 +36,9 @@ public class QuizController {
     @GetMapping("quiz/detail/{id}")
     public String getQuiz(Model model, @PathVariable("id") Long id) {
         Quiz quiz = this.quizService.getQuiz(id);
+        quiz.setCount(quiz.getCount() + 1);
+        this.quizService.modify(quiz, quiz.getTitle(), quiz.getContent());
+
         model.addAttribute("quiz", quiz);
         return "quiz/detail";
     }

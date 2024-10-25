@@ -16,7 +16,7 @@
       <td><a th:href="@{|/quiz/detail/${quiz.id}|}" th:text="${quiz.title}">제목 없음</a></td> <!-- Article subject -->
       <td th:text="${quiz.member.username}">작성자 없음</td>
       <td th:text="${#temporals.format(quiz.createdDate, 'yyyy-MM-dd')}"></td>
-      <td>0</td>
+      <td th:text="${quiz.count}"></td>
     </tr>
     </tbody>
     <tfoot>
