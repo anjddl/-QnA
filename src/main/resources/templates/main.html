@@ -14,7 +14,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="article, stat : ${articleList}">
+                            <tr th:each="article, stat : ${articleList}" th:if="${stat.index} < 4">
                                 <td th:text="${stat.index + 1}"></td>
                                 <td><a th:href="@{|/article/detail/${article.id}|}" th:text="${article.title}"></a></td>
                                 <td th:text="${article.member.username}"></td><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') --><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
@@ -37,7 +37,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="quiz, stat : ${quizList}">
+                        <tr th:each="quiz, stat : ${quizList}" th:if="${stat.index} < 4">
                             <td th:text="${stat.index + 1}"></td>
                             <td><a th:href="@{|/quiz/detail/${quiz.id}|}" th:text="${quiz.title}"></a></td>
                             <td th:text="${quiz.member.username}"></td><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') --><!-- User ID (Ensure that the variable name is correct: 'userid' instead of 'Userid') -->
@@ -62,7 +62,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="levelup, stat : ${levelupList}">
+                        <tr th:each="levelup, stat : ${levelupList}"th:if="${stat.index} < 2">
                             <td th:text="${stat.index + 1}"></td> <!-- Row number -->
                             <td><a th:href="@{|/levelup/detail/${levelup.id}|}" th:text="${levelup.title}"></a></td>
                             <td th:text="${levelup.member.username}"></td>
